@@ -1,0 +1,41 @@
+/* turistic points page styles */
+
+.list-group-item span {
+  margin-left: 12px;
+}
+
+.card {
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.card-img-top {
+  height: 343px;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .card {
+    width: 35rem;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .card {
+    width: 35rem;
+  }
+}
+
+/* ----------- Large Screens ----------- */
+@media screen and (min-width: 120em) {
+  .card {
+    width: 35rem;
+  }
+}
+
+/* ----------- Large Retina Screens ----------- */
+@media screen and (min-width: 120em) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .card {
+    width: 35rem;
+  }
+}

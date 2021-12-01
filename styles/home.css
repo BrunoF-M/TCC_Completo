@@ -1,0 +1,62 @@
+/* home page styles */
+.register-btn {
+  font-size: 13px;
+}
+
+.home-title {
+  font-size: 3em;
+  line-height: 0.9em;
+  font-weight: bold;
+}
+
+.home-subtitle {
+  font-weight: bold;
+}
+
+.logo {
+  max-height: 150px;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .home-container {
+    padding-left: 30px;
+  }
+
+  .logo {
+    max-height: 180px;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .home-container {
+    padding-left: 30px;
+  }
+
+  .logo {
+    max-height: 180px;
+  }
+}
+
+/* ----------- Large Screens ----------- */
+@media screen and (min-width: 120em) {
+  .home-container {
+    padding-left: 30px;
+  }
+
+  .logo {
+    max-height: 180px;
+  }
+}
+
+/* ----------- Large Retina Screens ----------- */
+@media screen and (min-width: 120em) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .home-container {
+    padding-left: 30px;
+  }
+
+  .logo {
+    max-height: 180px;
+  }
+}

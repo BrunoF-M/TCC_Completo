@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+*,
+button,
+input {
+  border: 0;
+  outline: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  padding-top: 56px;
+}
+
+.navbar {
+  background: white;
+}
+
+.nav-list>li {
+  font-size: 14.3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav-list>li+li {
+  margin-left: 10px;
+}
+
+.nav-list>li>a>i {
+  margin-left: 5px;
+}
+
+.action-button {
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.session-title {
+  padding-top: 35px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.company-logo {
+  max-width: 180px;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  main {
+    padding-top: 60px;
+  }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  main {
+    padding-top: 60px;
+  }
+}

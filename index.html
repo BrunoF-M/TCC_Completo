@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giro Mongaguá</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/home.css">
+  <link rel="stylesheet" href="./styles/history.css">
+  <link rel="stylesheet" href="./styles/turisticPoints.css">
+  <link rel="stylesheet" href="./styles/events.css">
+  <link rel="stylesheet" href="./styles/services.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+  <script src="./scripts/navbar.js"></script>
+  <script src="./scripts/modal.js"></script>
+  <script src="./scripts/turisticsPoints.js"></script>
+  <script src="./scripts/turisticsPointsModal.js"></script>
+  <script src="./scripts/services.js"></script>
+</head>
+
+<body>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_title">Localização</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal_body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-md navbar-light rounded-bottom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/Logo.png" alt="" height="41">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 nav-list">
+            <li></li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" onclick="closeOffCanvasNavbar()"
+                href="#history_section">História</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#turistic_points_section"
+                onclick="closeOffCanvasNavbar()">Pontos turísticos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#events_section"
+                onclick="closeOffCanvasNavbar()">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#services_section"
+                onclick="closeOffCanvasNavbar()">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#footer_section"
+                onclick="closeOffCanvasNavbar()">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./entrar.html">
+                Login
+                <i class="fas fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home_section" class="container-fluid home-container">
+      <br class="d-sm-none">
+      <br>
+
+      <div class="row h-100">
+        <div class="col-md-4 col-sm-6">
+          <div
+            class="h-100 d-flex flex-column justify-content-center align-items-center align-items-sm-start home-content-wrapper">
+            <img src="./assets/Logo.svg" class="img-fluid logo" alt="">
+
+            <p class="mt-3 text-center text-sm-start home-text">Um guia virtual perfeito para quem procura descobrir
+              novos horizontes. Com uma visão geral dos melhores pontos turísticos e uma vasta informação a respeito da
+              região, seu turismo em Mongaguá nunca mais será o mesmo!.</p>
+
+            <span class="mt-4 mb-5 d-flex justify-content-center justify-content-sm-start">
+              <a href="./cadastro.html" class="btn btn-primary register-btn action-button btn-lg active"
+                autocomplete="off" aria-pressed="true">
+                Criar conta agora!
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="col d-none d-sm-block">
+          <div class="h-100 d-flex align-items-center home-banner-wrapper">
+            <img src="./assets/people-celebrating.png" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history_section" class="container-fluid history-container pb-5">
+      <h3 class="session-title">História</h3>
+
+      <div class="row h-100 mt-4 mt-sm-5">
+        <div class="col d-flex mb-4 m-sm-0">
+          <img src="./assets/beach.png" class="img-fluid beach-img" alt="praia de mongaguá">
+        </div>
+
+        <div class="col-xxl-7 col-sm-7 col-md-6 px-3 px-md-4">
+          <div class="h-100 d-flex flex-column justify-content-center">
+            <p class="history-text">
+              Mongaguá é uma palavra indígena que significa “água pegajosa”. Nome dado pelos índios guaranis que
+              viviam
+              às margens dos rios Mongaguá e Aguapeú. No século XVI, emissários de Martim Afonso de Souza, em suas
+              viagens pelo litoral paulista, paravam em Mongaguá para descansar. Aos poucos, foram surgindo moradores
+              fixos e, consequentemente, as primeiras propriedades. Parte do território atual de Mongaguá situava-se,
+              naquela época, na Capitania de São Vicente e outra na Capitania de Itanhaém.
+            </p>
+
+            <br>
+
+            <p class="history-text">
+              Ao longo dos séculos, o Sítio de Mongaguá fora vendido para muitos militares, padres e figuras
+              importantes
+              das épocas passadas.
+            </p>
+
+            <br>
+
+            <p class="history-text">
+              Após a Segunda Guerra Mundial é que Mongaguá começou a se desenvolver. A construção da rodovia Padre
+              Manoel da Nóbrega, ligando Mongaguá a São Paulo, deu um grande impulso ao crescimento do distrito. Em
+              1948
+              foi criado o Distrito de Mongaguá que foi incorporado ao município de Itanhaém.
+            </p>
+
+            <br>
+
+            <p class="history-text">
+              Em 1959 Mongaguá foi elevada à categoria de Cidade. Em 1977, foi elevada à categoria de Estância
+              Balneária.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="turistic_points_section" class="container-fluid points-container pb-3">
+      <h3 class="session-title">Pontos Turísticos</h3>
+
+      <div class="row mt-4 mt-sm-5">
+        <div class="col-sm-6 d-flex justify-content-center">
+          <div class="card mt-4 mt-sm-0">
+            <img src="./assets/Morro da padroeira.JPG" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Morro da Padroeira</h5>
+              <p class="card-text">Com mais de 15 metros de altura e cerca de 2,5 toneladas, instalada em uma trilha
+                urbana feita em uma passarela de madeira com 150 metros de extensão. São 139 degraus em meio a mata
+                nativa. São 139 degraus em meio a mata nativa.
+              </p>
+              <p class="card-text">
+                Aos pés da santa, está localizado o Skate Park, local para a prática de esportes radicais.
+              </p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="fa fa-clock"></i>
+                &nbsp; Das 8:00h às 22:00h
+              </li>
+              <li class="list-group-item">
+                <i class="fa fa-calendar-week"></i>
+                &nbsp; Todos os dias
+              </li>
+              <li class="list-group-item">
+                <i class="fa fa-usd-circle"></i>
+                &nbsp; Gratuito
+              </li>
+            </ul>
+
+            <div class="p-3">
+              <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" onclick="changeModalInfo('padroeira')">
+                Como chegar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 d-flex justify-content-center">
+          <div class="card mt-4 mt-sm-0">
+            <img src="./assets/plataforma de pesca.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Plataforma de Pesca</h5>
+              <p class="card-text">
+                A maior plataforma pesqueira em estrutura de concreto armado.
+              </p>
+              <p class="card-text">
+                Avança 400 metros mar adentro, forma um “T”.
+              </p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="fa fa-clock"></i>
+                &nbsp; Das 8:00h às 20:00h
+              </li>
+              <li class="list-group-item">
+                <i class="fa fa-calendar-week"></i>
+                &nbsp; Todos os dias
+              </li>
+              <li class="list-group-item">
+                <i class="fa fa-usd-circle"></i>
+                &nbsp; R$ 5,00 por pessoa
+              </li>
+            </ul>
+
+            <div class="p-3">
+              <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" onclick="changeModalInfo('plataforma')"">
+                Como chegar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" row mt-4 mt-sm-5">
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Feira de Artesanato Vera Cruz.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Feira de Artes Vera Cruz</h5>
+                      <p class="card-text">
+                        Conta com artesanato local, infraestrutura de concreto e azulejos. É um bom local para as
+                        compras e
+                        passeios em família.
+                      </p>
+                      <p class="card-text">
+                        Na orla da praia conta também com uma praça e brinquedos para as crianças.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 9:00h às 00:00h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Sábados, domingos e feriados
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Não informado
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('feiraVeraCruz')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Feira de Artesanato Plataforma.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Feira de Artes da Plataforma</h5>
+                      <p class="card-text">
+                        Com infraestrutura de madeira maciça e tijolos de barro, está localizada no Complexo Plataforma,
+                        conta
+                        com artesãos locais e é um ótimo lugar para compras.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 9:00h às 00:00h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Sábados, domingos e feriados
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Não informado
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('feiraPlataforma')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="collapse mb-4" id="collapseExample">
+              <div class="row mt-4 mt-sm-5">
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Zona rural.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Complexo Rural</h5>
+                      <p class="card-text">
+                        Passar o dia todo pescando, curtir as piscinas de águas naturais ou, simplesmente, descansar à
+                        sombra
+                        de
+                        uma árvore. Apresenta uma oportunidade única de se conhecer um pouco sobre a fauna e flora da
+                        região e
+                        entrar nas águas dos rios e corredeiras.
+                      </p>
+                      <p class="card-text">
+                        Agendamento com guias de turismo.
+                        <a href="https://www.gov.br/turismo/pt-br" target="_blank">Acesse aqui</a>
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 9:00h às 00:00h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Agendado
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Não informado
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('zonaRural')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/centro-cultural-mongagua.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Centro Cultural Raul Cortez</h5>
+                      <p class="card-text">
+                        Oferece cursos gratuitos de música, pintura, teclado, violão, violino, hip hop, ballet, jazz,
+                        dança de
+                        rua, dança do ventre, teatro, dança de salão e coral, tudo para a população de Mongaguá.
+                      </p>
+                      <p class="card-text">
+                        Além disso, abriga o Teatro Municipal Ronaldo Ciambroni, com capacidade para 320 espectadores.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                          <i class="fa fa-clock"></i>
+                          <span>
+                            Das 8:00h às 17:00h para visitação e em horários específicos de espetáculos.
+                          </span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Não informado
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Gratuito
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('centroCultural')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4 mt-sm-5">
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Feira de Artesanato Centro.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Feira de Artesanato do Centro</h5>
+                      <p class="card-text">
+                        Um sofisticado complexo de 98 quiosques com arquitetura própria de madeira maciça e tijolos
+                        aparentes.
+                      </p>
+                      <p class="card-text">
+                        Ótimo local para compras de artesanatos locais.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 9:00h às 00:00h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Sábados, domingos e feriados
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Não informado
+                      </li>
+
+                      <div class="card-body">
+                        <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop" onclick="changeModalInfo('feiraCentro')">
+                          Como chegar
+                        </button>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Praça Jacoub.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Praça Jacoub Koukdjian e Fernando Arens</h5>
+                      <p class="card-text">
+                        Situadas na área central da cidade, recebem milhares de turistas todos os anos.
+                      </p>
+                      <p class="card-text">
+                        Os nomes são em homenagem a grandes personalidades na história de Mongaguá.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Livre
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; Todos os dias
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Gratuito
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('pracaJacoub')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4 mt-sm-5">
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Igreja Matriz.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Igreja Matriz Nossa Senhora da Conceição Aparecida</h5>
+                      <p class="card-text">
+                        Construída em 1949, em estilo colonial, a igreja possui a imagem de Nossa Senhora da Conceição
+                        Aparecida
+                        trazida da cidade de Aparecida do Norte, e imagens como a de São José, Santa Rita de Cássia, São
+                        Judas
+                        Tadeu e Santa Luzia, além disso, destacam-se no templo os vitrais coloridos que representam
+                        cenas
+                        bíblicas.
+                      </p>
+                      <p>
+                        Para horários de missas, ligue: <a href="tel:+551334483358">(13) 3448-3358</a>.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                          <i class="fa fa-clock"></i>
+                          <span>
+                            Das 9:00h às 19:00h, 14:00h às 19:00h aos sábados e das 8:00h às 12:00h aos domingos
+                          </span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; De terça a domingo
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; Gratuito
+                      </li>
+
+                      <div class="card-body">
+                        <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop" onclick="changeModalInfo('igrejaMatriz')">
+                          Como chegar
+                        </button>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Parque A tribuna.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Parque Ecológico “A Tribuna”</h5>
+                      <p class="card-text">
+                        Educação ambiental, abordando temas como o tráfico de animais silvestres, lixo, reciclagem,
+                        conservação
+                        da biodiversidade e de áreas verdes.
+                      </p>
+                      <p class="card-text">
+                        Com 15 mil m2, com Jabutis, serpentário, viveiro interativo de aves, recinto de Quati, Jacaré,
+                        Tucanos,
+                        Gavião, além de 15 aquários tropicais e marinhos com peixes de diversas partes do globo, acervo
+                        de
+                        conchas, sementes, pedras, areias de todas as praias do litoral de São Paulo, animais
+                        conservados em
+                        formol, além de muita informação sobre os mais diferentes temas ambientais.
+                      </p>
+                      <p>
+                        Para mais informações, ligue: <a href="tel:+551334461505">(13) 3446-1505</a>.
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 8:00h às 16:00h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; De terça a domingo
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-usd-circle"></i>
+                        &nbsp; R$ 5,00 por pessoa.
+                      </li>
+                    </ul>
+
+                    <div class="p-3">
+                      <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="changeModalInfo('parqueTribuna')">
+                        Como chegar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4 mt-sm-5">
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card mt-4 mt-sm-0">
+                    <img src="./assets/Poço Das antas.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Poço das Antas</h5>
+                      <p class="card-text">
+                        Uma queda-d’água que forma uma cachoeira, terminando com uma piscina de água natural.
+                      </p>
+                      <p>
+                        Trata-se de um recanto ecológico que dispõe de uma boa infraestrutura, com banheiro, pontes com
+                        corrimão, lanchonetes, guarita e um amplo estacionamento. Excelente lugar para banho e
+                        piquenique e
+                        para
+                        quem pretende se aventurar pelas trilhas morro acima, que levam até as cachoeiras
+                      </p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-clock"></i>
+                        &nbsp; Das 8h às 17h
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-calendar-week"></i>
+                        &nbsp; De segunda a domingo
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex align-items-center">
+                          <i class="fa fa-usd-circle"></i>
+                          <span>
+                            R$ 2,00/pessoa - R$ 4,00/moto - R$ 10,00/carro
+                          </span>
+                        </div>
+                      </li>
+
+                      <div class="card-body">
+                        <button class="btn btn-primary btn-lg action-button" data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop" onclick="changeModalInfo('pocoDasAntas')">
+                          Como chegar
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-center mt-5">
+              <a class="btn btn-secondary btn-lg action-button" id="see_all_points_button_wrapper"
+                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                <i class="fa fa-plus"></i>
+                Ver todos
+              </a>
+
+              <a class="btn btn-secondary btn-lg action-button hide" id="hide_points_button_wrapper"
+                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                <i class="fa fa-window-minimize"></i>
+                Ver menos
+              </a>
+            </p>
+
+    </section>
+
+    <section id="events_section" class="container-fluid events-container">
+      <h3 class="session-title">Eventos</h3>
+
+      <ul class="event-timeline mt-3">
+        <li>
+          <div class="event-timeline-badge light">jan</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Show de verão</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>Grandes Shows musicais com artistas locais e nacionais, atividades recreativas e
+                esportivas nas praias.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="event-timeline-inverted">
+          <div class="event-timeline-badge purple">fev</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Carnaval</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>Tradicional festa com apresentação de blocos camavalescos, baile de carnaval para
+                crianças, jovens e adultos.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event-timeline-badge danger">jun</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Festão na Prala</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>Tradicional festa coberta, onde é oferecida aos visitantes, comidas típicas, show de
+                calouros e diversas apresentações culturais.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="event-timeline-inverted">
+          <div class="event-timeline-badge warning">ago</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Caminhada para Jesus</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>
+                A Marcha para Jesus é um evento internacional e interdenominacional que ocorre anualmente em milhares de
+                cidades espalhadas pelo mundo.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event-timeline-badge pink">Out</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Festa da Padroeira Nossa Senhora da Conceição Aparecida</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>
+                Festa religiosa católica, com procissão e a tradicional encenação feita pelos fieis da
+                aparição de Nossa Senhora Aparecida, realizada no rio Mongaguá.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="event-timeline-inverted">
+          <div class="event-timeline-badge warning">dez</div>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Aniversário da Cidade</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>
+                Na semana do dia 07 de dezembro comemora-se a semana de aniversário de eman-
+                cipação politica da Cidade, com tradicional baile de Gala, Baile da Melhor Idade e a
+                festa dos jovens com Shows na praça de eventos Dudu Samba.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Festa de Yemanjá</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>
+                Tradicional Festa da Comunidade Umbanda que recebe milhares de seguidores, junto
+                ao monumento de lemanjá na praia de Agenor de Campos.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="event-timeline-inverted">
+          <div class="event-timeline-panel">
+            <div class="event-timeline-heading">
+              <h4 class="event-timeline-title">Réveillon</h4>
+            </div>
+            <div class="event-timeline-body">
+              <p>
+                Grande festa de fim de ano, com grande show pirotécnico e shows musicais nas
+                praias do centro e Agenor de Campos
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="services_section" class="container-fluid mb-5 pb-5">
+      <h3 class="session-title">Serviços</h3>
+
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="timeline">
+            <li>
+              <a class="timeline-title" target="_blank" href="https://goo.gl/maps/c9tK8RffS58ZB4WH8">Hospital e
+                Maternidade Dra. Adoniran Corrêa Campos</a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; Av. São Paulo, 826 – Vila São Paulo
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3505-6060
+              </p>
+            </li>
+            <li>
+              <a class="timeline-title" target="_blank" href="https://goo.gl/maps/b9cAYMs1jduiYqi79">Pronto Socorro
+                Central</a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; Av. São Paulo, 3.288 – Vera Cruz
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3303-6652 (Emergência) - (13) 3303-6651 (Administração)
+              </p>
+            </li>
+            <li>
+              <a class="timeline-title" target="_blank"
+                href="https://www.google.com/search?tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=AOaemvJQGEPBp5Wl1opPEMFbhEeEyOWiyw:1637832388630&q=upa+agenor+de+campos&rflfq=1&num=10&ved=2ahUKEwiozOaNmbP0AhUar5UCHesdCh4QtgN6BAgIEAQ#rlfi=hd:;si:17934241452336756735,l,ChR1cGEgYWdlbm9yIGRlIGNhbXBvc1ocIhR1cGEgYWdlbm9yIGRlIGNhbXBvcyoECAIQAJIBCGhvc3BpdGFsmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5EZERjemVXaG5SUkFC;mv:[[-24.1198031,-46.6844378],[-24.1258195,-46.6986243]]">
+                UPA – Unidade de Pronto Atendimento
+              </a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; Av. Monteiro Lobato, 9.400 – Agenor de Campos
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3507-1110 – (13) 3506-5044
+              </p>
+            </li>
+            <div class="collapse" id="service_collapse">
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/uQZzkPbdyXwPnGbA6">
+                  Unidade de Saúde Mental
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. São Paulo, 3413 - Balneario Umurama
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3448-5711
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank"
+                  href="https://www.google.com/maps/search/Av.+S%C3%A3o+Paulo,+3.570+-+Vera+Cruz+mongagua/@-24.1026842,-46.6400452,17.01z">
+                  Farmácia Alto custo
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. São Paulo, 3.570 - Vera Cruz
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3507-3349
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/PEqXjit5m2M3eEJv9">
+                  Banco do Brasil
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. São Paulo, 1359 – Centro
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 4003-3001
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/Z2WKnCAvT5b257mo9">
+                  Caixa Econômica Federal
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Rua Brasília Teixeira, 84 – Centro
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3797-6550
+                </p>
+              </li>
+            </div>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="timeline">
+            <li>
+              <a class="timeline-title" target="_blank" href="https://goo.gl/maps/1dUiXiG4Z88LhVKK9">
+                Centro de Fisioterapia
+              </a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; R. Joana Cristina Lourenço, 18-20 - Balneario Itaguaí
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3506-3975
+              </p>
+            </li>
+            <li>
+              <a class="timeline-title" target="_blank" href="https://goo.gl/maps/59NvEtnCCwK5HhSr7">
+                Centro de Controle de Zoonoses – CCZ
+              </a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; Av. São Paulo, 3.458 – Vera Cruz
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3507-5479
+              </p>
+            </li>
+            <li>
+              <a class="timeline-title" target="_blank" href="https://goo.gl/maps/QmBnLz76PMtRHE7F7">
+                SAE – Serviço de Atendimento Especializado / IST-AIDS
+              </a>
+              <p>
+                <i class="fa fa-map-marker-alt"></i>
+                &nbsp; Rua Yolanda Ferrigno, 20 – Centro
+              </p>
+              <p>
+                <i class="fa fa-phone-alt"></i>
+                &nbsp; (13) 3507-1148
+              </p>
+            </li>
+            <div class="collapse" id="service_collapse">
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/QmBnLz76PMtRHE7F7">
+                  Farmácia Municipal
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. Sorocabana, 4619-4989 - Balneario Umurama
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3448-2773
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/NeKT3s39nhFpAnpm8">
+                  Banco do Bradesco
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. Dr. Getúlio Vargas, 236 – Centro
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3448-2122
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/F8KPsuZuRDZjopru9">
+                  Banco Santander
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. São Paulo, 1864 – Centro
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3445-2000
+                </p>
+              </li>
+              <li>
+                <a class="timeline-title" target="_blank" href="https://goo.gl/maps/hTooaEXHz3s5BmUS9">
+                  Agência de Correios
+                </a>
+                <p>
+                  <i class="fa fa-map-marker-alt"></i>
+                  &nbsp; Av. Marina, 984 – Centro
+                </p>
+                <p>
+                  <i class="fa fa-phone-alt"></i>
+                  &nbsp; (13) 3445-2000
+                </p>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center mt-5">
+        <a class="btn btn-secondary btn-lg action-button" data-bs-toggle="collapse" id="expand_services_button"
+          href="#service_collapse" role="button" aria-expanded="false" aria-controls="service_collapse">
+          <i class="fa fa-plus"></i>
+          Ver todos
+        </a>
+        <a class="btn btn-secondary btn-lg action-button hide" data-bs-toggle="collapse" id="hide_services_button"
+          href="#service_collapse" role="button" aria-expanded="false" aria-controls="service_collapse">
+          <i class="fa fa-window-minimize"></i>
+          Ver menos
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span>Conecte-se conosco nas redes sociais:</span>
+      </div>
+
+      <div>
+        <a href="https://www.facebook.com/giramongagua" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/giramongagua" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/giramongagua/" target="_blank" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+
+    <section id="footer_section">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="./assets/Company-logo.png" class="img-fluid company-logo" alt="">
+            </h6>
+            <p>
+              Uma empresa de turismo focada orientação de viagens e ajuda milhares de pessoas
+              a se tornarem melhores viajantes, desde o planejamento até a viagem.
+            </p>
+            <a href="./entrar.html" class="btn btn-secondary register-btn action-button btn-lg active w-50"
+              autocomplete="off" aria-pressed="true">
+              Login
+            </a>
+          </div>
+
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Links úteis
+            </h6>
+            <ul>
+              <li>
+                <p>
+                  <a href='https://www.freepik.com/vectors/people' target="_blank">Autor do banner da sessão home</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contato
+            </h6>
+            <p><i class="fas fa-home me-3"></i> Av. Monteiro Lobato, 8000 - Balneário Itaóca, Mongaguá - SP, 11730-000
+            </p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>faleconosco@giramongagua.com.br
+            </p>
+            <p><i class="fas fa-phone me-3"></i>(13) 981430274</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <span class="text-reset fw-bold">Litotech</span>
+    </div>
+  </footer>
+</body>
+
+</html>
